@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+</head>
+<body>
+    
+<v-app>
+   <div id="app" style="margin: 30px;">
+    
+    <h1>Editable Text</h1>
+    <p v-if="!isEditMode" append-icon="mdi-pencil" style="margin: 20px; margin-left: 0px;">{{ greeting }} <v-icon @click="changeMode()">mdi-pencil</v-icon></p>
+    <v-text-field v-else type="text" v-model="greeting" style="width: 200px;" append-icon="mdi-check" @click:append="changeMode()">
+    </v-text-field>
+
+    <v-divider style="margin: 20px 0;"></v-divider>
+
+    <h1>Default file upload</h1>
+    <input type="file" @change="showImagePreview" style="margin-bottom: 50px;"/>
+
+    <v-divider style="margin: 20px 0;"></v-divider>
+
+    <h1>File upload with Vuetify</h1>
+    <v-file-input prepend-icon="mdi-camera" clear-icon="mdi-close" v-model="choosenFile" accept=".png" @change="showPreview" style="width: 400px;"></v-file-input>
+
+    <v-img v-if="url" :src="url" style="max-width: 200px;"></v-img>
+
+    
+   </div>
+</v-app>
+
+<script src="./main.js"></script>
+</body>
+</html>
