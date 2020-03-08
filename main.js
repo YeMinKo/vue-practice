@@ -35,7 +35,12 @@ var app = new Vue({
         iconName(){
             return this.isEditMode ? "check": "pencil"
         },
-        
-        
+    },
+    mounted: function(){
+        fetch('https://opentdb.com/api.php?amount=10&category=9&type=multiple', {
+            method: 'get'
+        }).then( response => {
+            console.log(response)
+        })
     }
 })
