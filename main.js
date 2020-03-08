@@ -13,6 +13,7 @@ var app = new Vue({
         greeting: "Hi",
         url: null,
         choosenFile: null,
+        questions: Array
     },
     methods: {
         changeMode(){
@@ -40,7 +41,9 @@ var app = new Vue({
         fetch('https://opentdb.com/api.php?amount=10&category=9&type=multiple', {
             method: 'get'
         }).then( response => {
-            console.log(response)
+            return response.json()
+        }).then( jsonData => {
+            this.questions = jsonData.results
         })
     }
 })

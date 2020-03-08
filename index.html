@@ -33,6 +33,12 @@
 
     <v-img v-if="url" :src="url" style="max-width: 200px;"></v-img>
 
+    <v-divider style="margin: 20px 0;"></v-divider>
+
+    <h1>Fetch Data from <i>opentdb.com</i></h1>
+    <ul>
+      <li v-for="question in questions">{{ question.question }}</li>
+    </ul>
     
    </div>
 </v-app>
