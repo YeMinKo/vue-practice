@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Bootstrap</title>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+
+    <!-- Load polyfills to support older browsers -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+
+    <!-- Load the following for BootstrapVueIcons support -->
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+</head>
+<body>
+    <div id="app">
+            <b-card
+                    title="Card Title"
+                    img-src="https://picsum.photos/600/300/?image=25"
+                    img-alt="Image"
+                    img-top
+                    tag="article"
+                    style="max-width: 20rem;"
+                    class="mb-2">
+                    <b-card-text>
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </b-card-text>
+
+                    <b-button href="#" variant="primary">Go somewhere</b-button>
+            </b-card>
+
+            <div>
+                <b-button>Button</b-button>
+                <b-button variant="danger">Button</b-button>
+                <b-button variant="success">Button</b-button>
+                <b-button variant="outline-primary">Button</b-button>
+                <b-icon-arrow-up></b-icon-arrow-up>
+                <b-icon-alert-triangle-fill></b-icon-alert-triangle-fill>
+              </div>    
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+</html>

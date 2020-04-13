@@ -1,14 +1,24 @@
+function changeData() {
+    setData.call(app); // JS call(), apply() and bind() example
+ } 
+
+function setData(){
+    return this.testData = "Changed Data";
+}
+
+
 function setOutSideText(){
     app.greeting = "hello world"; // set outside data to Vue
 }
 
 function showLog(){
     console.log("Greeting is : "+ app.$data.greeting); // get Vue data to outside
-}   
+} 
 
 var app = new Vue({
     el: '#app',
     data: {
+        testData: 'Hello',
         isEditMode: false,
         greeting: "Hi",
         url: null,
